@@ -1,0 +1,72 @@
+Une préparation, trois offres
+
+Cyril Quesnel
+
+1. Partez d’une préparation qui plaît déjà
+
+Votre carte s’allonge, mais chaque nouveauté ajoute des achats et du travail ? Avant d’ajouter un plat, regardez ce que vous préparez déjà bien.
+
+Au Lunch Wagon, je faisais des tenders maison : des aiguillettes de poulet frais, panées à l’anglaise avec des cornflakes. Cette préparation avait trois places dans ma carte : le menu enfant, les tapas et le burger. Je répondais à des envies différentes avec une base commune.
+
+Je cherchais à garder la qualité sans multiplier les ingrédients utilisés dans un seul plat. À La Verrerie aussi, je regardais ce qui était disponible pour adapter mes suggestions. Cela demandait de réfléchir aux produits, aux portions et au travail pendant le service.
+
+Choisissez une préparation réelle de votre carte. Une base que vos clients apprécient et que votre équipe sait reproduire. Cherchez ensuite trois façons cohérentes de la proposer. Il n’est pas obligatoire d’en trouver trois : deux offres utiles valent mieux qu’une déclinaison sans intérêt.
+
+Ma préparation de départ : [à compléter]
+Ce que mes clients apprécient dans cette préparation : [à compléter]
+L’envie à laquelle chaque offre doit répondre : [à compléter]
+
+2. Remplissez votre fiche avant de changer la carte
+
+Commencez par une seule préparation. Renseignez vos quantités et vos achats réels ; laissez visibles les informations encore inconnues.
+
+PRÉPARATION COMMUNE
+Nom : [à compléter]
+Ingrédients communs : [à compléter]
+Quantité préparée et nombre de portions réellement obtenues : [à compléter]
+Travail de préparation partagé : [à compléter]
+
+OFFRE 1
+Nom et envie du client : [à compléter]
+Portion de la préparation commune : [à mesurer]
+Ingrédients ou accompagnements spécifiques : [à compléter]
+Travail supplémentaire au service : [à compléter]
+Prix de vente actuel ou envisagé, en précisant HT ou TTC : [à compléter]
+
+OFFRE 2
+Nom et envie du client : [à compléter]
+Portion de la préparation commune : [à mesurer]
+Ingrédients ou accompagnements spécifiques : [à compléter]
+Travail supplémentaire au service : [à compléter]
+Prix de vente actuel ou envisagé, en précisant HT ou TTC : [à compléter]
+
+OFFRE 3
+Nom et envie du client : [à compléter]
+Portion de la préparation commune : [à mesurer]
+Ingrédients ou accompagnements spécifiques : [à compléter]
+Travail supplémentaire au service : [à compléter]
+Prix de vente actuel ou envisagé, en précisant HT ou TTC : [à compléter]
+
+ACHATS À VÉRIFIER
+Produit utilisé dans une seule offre : [à compléter]
+Conditionnement et minimum de commande : [à vérifier]
+Quantité nécessaire pour les ventes prévues : [à estimer]
+Prix d’achat daté et coût de la portion : [à vérifier]
+Allergènes et contraintes à vérifier pour chaque offre : [d’après vos fiches et produits réels]
+
+3. Prenez une décision, puis essayez-la
+
+Pour chaque offre, choisissez :
+
+- Garder : elle plaît, ses achats sont adaptés et le service reste maîtrisé.
+- Simplifier : un accompagnement ou une étape ajoute du travail sans apporter assez au client.
+- Mettre en attente : les portions, les achats ou l’organisation restent trop incertains pour la proposer.
+
+Testez une modification à la fois. Après le service, notez les ventes, les restes, le travail supplémentaire et les retours clients. Une préparation commune ne prouve pas à elle seule une économie ; vérifiez ce qui change réellement chez vous.
+
+PROMPT À COPIER
+
+« Voici ma fiche remplie : [collez votre fiche]. Organisez uniquement les informations fournies pour comparer mes offres. Faites ressortir les ingrédients communs, les compléments spécifiques, les différences de portion et le travail supplémentaire. Signalez les informations manquantes et les questions à vérifier avant un essai. N’inventez aucun prix, grammage, rendement, allergène ou résultat d’économie. Ne décidez pas à ma place. »
+
+Ma décision à tester : [à compléter]
+Ce que je vérifierai au prochain service : [à compléter]

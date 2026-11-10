@@ -1,0 +1,196 @@
+CYRIL QUESNEL — Comparer une carte et ses coûts
+
+MODE D’EMPLOI
+Copiez ce document entier dans une conversation ChatGPT, puis ajoutez vos informations. Les instructions, la méthode, le modèle et les sources sont tous inclus ci-dessous ; les chemins cités servent uniquement à repérer ces sections. Aucun autre fichier ni abonnement à un service de Cyril n’est nécessaire. Cet assistant prépare des comparaisons et des brouillons ; vous validez les prix, les conditions et les décisions avant tout envoi. Les réponses destinées à l’utilisateur sont rédigées en français et en vouvoiement.
+
+
+====================================================================
+SKILL.md
+====================================================================
+
+---
+name: cyril-carte-couts-food
+description: "Chiffre une carte food : fiche technique, coût portion, contribution en euros, comparaison de 2-3 offres issues d'une même préparation, essai à décider. Données du pro exigées."
+---
+
+# Carte et coûts food
+
+## Objectif
+Aider un restaurateur, un food truck ou un traiteur à comparer ses plats avec ses vrais chiffres : ce que coûte une portion, ce qu'elle laisse en euros, combien elle se vend, et quel essai lancer. Cas de départ : une préparation commune (par exemple des tenders maison) servie en menu enfant, en tapas et en burger.
+
+## Ce qu'il faut recevoir (sans refaire un questionnaire)
+Demandez uniquement ce qui manque dans cette liste, ligne par ligne :
+- pour chaque composant : quantité nette par portion, unité, prix d'achat HT du conditionnement, date et source du prix (facture, mercuriale) ;
+- rendement si le produit perd à la préparation (parage, cuisson) ;
+- prix de vente HT de chaque offre ;
+- ventes réelles par offre sur une période datée, si elles existent ;
+- temps de travail et contraintes de service, si le pro les connaît.
+Classez toujours : **données fournies**, **hypothèses**, **inconnues**. N'inventez ni prix, ni grammage, ni rendement, ni allergène. Un prix sans date reste une hypothèse.
+
+## Workflow
+1. Isolez la préparation commune : coût du lot, nombre de portions, coût d'une portion de préparation.
+2. Faites une fiche par offre : part de préparation + pain, accompagnement, sauce, emballage.
+3. Calculez par offre : sous-total ingrédients ; emballage à part ; **coûts variables retenus** = ingrédients + emballage ; contribution = prix HT − coûts variables retenus ; pourcentage matière = ingrédients ÷ prix HT. Précisez le poids d'une portion (cru avant panure ou produit fini).
+4. S'il y a des ventes : contribution totale = contribution × quantités vendues. Comparez ensuite plusieurs offres avec ce total, pas avec le seul pourcentage.
+5. Signalez ce qui manque : temps de travail, pertes réelles, portions réellement servies (à peser sur 5 à 10 assiettes).
+6. Proposez un seul essai mesurable : quoi changer, sur quelle période, ce qu'on relève avant et après.
+Réutilisez les classeurs Excel existants (liens dans `assets/kit.md`) au lieu de créer un nouvel outil.
+
+## Sortie utile
+Un tableau par offre, la liste des données manquantes, l'essai proposé et trois arbitrages à trancher par le professionnel. Les calculs sont montrés pas à pas pour être refaits à la main.
+
+## Contrôles avant de répondre
+
+- Un prix d’achat ou une quantité manquante reste inconnu : ne le remplacez pas par zéro et ne validez pas le coût complet.
+- Pour le ratio global de la carte, divisez le coût total des ingrédients des portions vendues par leur chiffre d’affaires total. Ne faites pas la moyenne simple des pourcentages des plats.
+- Ne fixez pas automatiquement un objectif de 30 % ; demandez les contraintes et l’objectif de l’établissement.
+- La contribution est calculée avant personnel, charges, pertes et temps : ce n'est pas un bénéfice net. Dites-le dans la réponse.
+- Pour une entreprise redevable de TVA, calculez sur coûts et ventes HT. Si la TVA sur achats n’est pas récupérable, adaptez le coût ; ne mélangez jamais prix HT et TTC sans conversion explicite.
+- Aucun « bon pourcentage » universel : les repères des manuels sont pédagogiques.
+- Un chiffre fictif de démonstration est toujours étiqueté fictif.
+- Le professionnel valide prix, grammages, allergènes et décisions ; l'IA structure et compare.
+
+## Consultation humaine (seulement si utile)
+Si le professionnel hésite entre plusieurs choix de carte ou de prix, indiquez que Cyril Quesnel, restaurateur, peut examiner ces arbitrages avec lui lors d'un échange. Ce n'est jamais nécessaire pour utiliser ce skill ; tarif et lien ne sont pas définis ici, ne les inventez pas. Si le professionnel refuse, continuez normalement.
+
+## Fichiers liés
+- Méthode et compromis : `references/methode.md`
+- Sources lues : `references/sources.md`
+- Modèle à remplir avec démonstration : `assets/kit.md`
+
+====================================================================
+references/methode.md
+====================================================================
+
+# Méthode : chiffrer une carte à partir d'une préparation commune
+
+## Le principe en une phrase
+Une même préparation peut nourrir plusieurs offres. On chiffre chaque offre séparément, on regarde ce qu'elle laisse en euros par vente, puis on décide d'un essai plutôt que d'un grand changement.
+
+## D'où vient la méthode
+- Beth Egan (Penn State, remix d'un manuel libre) : le coût d'une portion est la somme de ses composants. Le pourcentage matière est le coût des ingrédients divisé par le prix de vente ; nous y ajoutons l'emballage dans une ligne distincte, « coûts variables retenus ». La **contribution** est le prix moins ce coût. Un plat est comparé sur sa contribution et sur sa popularité (part des ventes). Le manuel prévient : les moyennes laissent toujours des plats « en dessous », et le calcul en amont suppose des portions idéales et une vente complète.
+- Sheryl Kimes (Cornell, page de présentation d'un cours) : rentabilité et volume se regardent ensemble, puis on travaille le nom, la description et la place des plats sur la carte. Cette page annonce un cadre ; elle ne démontre aucun gain.
+
+Ces méthodes sont celles de tiers. Elles ne prouvent pas un résultat chez Cyril.
+
+## Le cas vécu par Cyril (déclaré, non chiffré ici)
+À la reprise du Lunch Wagon, Cyril jugeait les marges trop faibles pour le fait maison. Il a revu carte, formules et prix. Son exemple : des aiguillettes de poulet frais panées avec des cornflakes, servies en formule enfant, en tapas et en burger. Il cite 15 à 20 kg de tenders lors de certains événements du soir ; le contexte exact est inconnu, donc aucune conversion en portions ou en bénéfice n'est faite. À La Verrerie, il proposait un menu du midi à 15 € (entrée + plat ou plat + dessert) et réutilisait un produit dans plusieurs recettes pour éviter la perte. « Zéro perte » est son objectif, pas un résultat mesuré.
+
+## Les choix et leurs compromis
+- **Une fiche par offre, pas une fiche pour tout le lot.** Plus de saisie, mais on voit quelle offre pèse sur le pain, la sauce ou l'emballage.
+- **Contribution plutôt que pourcentage seul.** Un burger à pourcentage matière plus élevé peut laisser plus d'euros par vente. Contrepartie : il demande plus de travail et de place sur la plancha ; le calcul ne le dit pas.
+- **Prix du pain à part.** Cyril refuse un pain à 0,50 € qui dégraderait la qualité : c'est un choix de positionnement, pas un minimum universel. L'assistant montre l'effet d'un autre pain sur la contribution, la décision reste au pro.
+- **Un essai à la fois.** Changer prix, nom et position le même jour empêche de savoir ce qui a joué.
+
+## En situation
+Avant un service ou un événement : pesez la portion réellement servie, relevez le prix facturé du jour, notez les restes. Après : comparez ventes et restes à la fiche. Si l'écart est net, corrigez la fiche avant de corriger le prix.
+
+## Ce qu'on évite
+- Annoncer un « bon » pourcentage matière : aucun seuil ne vaut pour tous.
+- Confondre contribution et bénéfice : le personnel, les charges et les pertes n'y sont pas.
+- Retirer un plat parce qu'il est sous la moyenne : voir ses ventes, son rôle dans la carte et le travail qu'il demande.
+- Utiliser un prix sans date ou un grammage deviné.
+
+====================================================================
+references/sources.md
+====================================================================
+
+# Sources : carte et coûts
+
+Date de consultation : 10 novembre 2026.
+
+## 1. Beth Egan (Penn State), « 2.06 Menu Analysis (Engineering) »
+- **Livre :** *Introduction to Food Production and Service*, Workforce LibreTexts, CC BY 4.0, remix du manuel BC Cook Articulation Committee.
+- **URL :** https://workforce.libretexts.org/Bookshelves/Food_Production_Service_and_Culinary_Arts/Introduction_to_Food_Production_and_Service_(Egan)/02%3A_Menus_and_Recipes/2.06%3A_Menu_Analysis_(Engineering)
+- **Lu :** la page de cette section, ouverte le 10 nov. 2026.
+- **Retenu :** la contribution est le prix moins le coût standard ; on la croise avec la popularité de chaque plat.
+- **Limite :** exemples en dollars, pédagogiques. L'auteure rappelle que les moyennes laissent toujours des plats en dessous et que le coût calculé suppose des portions idéales. Aucun résultat mesuré chez Cyril.
+
+## 2. Sheryl Kimes / eCornell, « Menu Design and Engineering »
+- **Auteure :** Sheryl Kimes, professeure émérite, Cornell Nolan School of Hotel Administration.
+- **URL :** https://ecornell.cornell.edu/corporate-programs/courses/hospitality-and-foodservice-management/menu-design-and-engineering/
+- **Lu :** la page de présentation (aperçu du cours, auteure). Le cours lui-même n'a pas été suivi ; la page n'affiche pas de prix.
+- **Retenu :** rentabilité et volume se lisent ensemble, puis nom, description et mise en avant.
+- **Limite :** présentation, pas méthode complète ni résultat. Aucun gain annoncé.
+
+## 3. BC Cook Articulation Committee / BCcampus : The Principles of Menu Engineering
+- URL : https://opentextbc.ca/basickitchenandfoodservicemanagement/chapter/describe-the-principles-of-menu-engineering/
+- Lu : chapitre HTML, sections coût matière, contribution et choix de l’objectif, le 10 novembre 2026.
+- Retenu : comparer le coût d’une portion, les euros laissés par vente et les ventes observées ; ne pas imposer un pourcentage matière identique à tous les établissements.
+- Limite : exemples pédagogiques canadiens, pas des normes françaises.
+
+## 4. BC Cook Articulation Committee / BCcampus : Monthly Food Costs
+- URL : https://opentextbc.ca/basickitchenandfoodservicemanagement/chapter/monthly-food-costs/
+- Lu : chapitre HTML le 10 novembre 2026.
+- Retenu : distinguer les achats de la consommation corrigée des stocks ; signaler les ajustements nécessaires selon les usages et transferts.
+- Limite : même période et même périmètre pour les coûts et les ventes comparés.
+
+## Outils complémentaires de Cyril
+- Guide Food Truck, carte et coût matière : https://www.guide-foodtruck.com/ressources/menu/
+- Fiche technique et mercuriale Onrush : https://ngneaotxxvwfbwwdqiqz.supabase.co/storage/v1/object/public/ressources/template-fiche-technique.xlsx
+- Les classeurs sont des supports à renseigner et vérifier avec vos chiffres. Une donnée manquante ne devient pas zéro ; le ratio global ne se calcule pas par une moyenne simple des pourcentages des plats.
+
+====================================================================
+assets/kit.md
+====================================================================
+
+# Kit : comparer trois offres faites avec la même préparation
+
+Vous partez d'une préparation que vous faites déjà (tenders, sauce, farce, fond…) et vous la servez de plusieurs façons. Ce kit vous donne un exemple rempli, un modèle à copier et l'essai à décider. Tout est en HT. Le chiffre « reste après matières » n'est pas votre bénéfice.
+
+## 1. Démonstration (chiffres entièrement fictifs)
+Données fournies (fictives) : lot de 3 kg de poulet à 9,00 €/kg = 27,00 € ; panure 3,50 € ; huile de friture 1,50 €. Lot = 32,00 € pour 30 portions. Une portion = 100 g de poulet **cru, avant panure et cuisson** (3 kg ÷ 30), pas le poids du produit fini.
+**Coût d'une portion de préparation : 32,00 ÷ 30 = 1,07 €.**
+
+| | Enfant | Tapas | Burger |
+|---|---|---|---|
+| Préparation | 1 portion = 1,07 | 1,5 portion = 1,60 | 1 portion = 1,07 |
+| Pain | 0 | 0 | 1,00 |
+| Accompagnement / garniture | 0,40 | 0 | 0,60 |
+| Sauce | 0,10 | 0,30 | 0,15 |
+| **Sous-total ingrédients** | **1,57** | **1,90** | **2,82** |
+| Emballage | 0,15 | 0,15 | 0,20 |
+| **Coûts variables retenus** (ingrédients + emballage) | **1,72** | **2,05** | **3,02** |
+| Prix de vente HT (fictif) | 6,50 | 7,00 | 9,50 |
+| **Contribution** (prix − coûts variables retenus) | **4,78** | **4,95** | **6,48** |
+| % matière (ingrédients ÷ prix) | 24,1 % | 27,1 % | 29,6 % |
+| Part des coûts variables retenus (÷ prix) | 26,4 % | 29,3 % | 31,8 % |
+
+Ventes fictives d’une soirée : 20 enfants, 30 tapas, 50 burgers. Elles utilisent 20 + (30 × 1,5) + 50 = 115 portions de préparation. Le lot de 30 sert uniquement de base au coût unitaire ; les quantités et achats de production doivent être redimensionnés. Ventes : 130,00 + 210,00 + 475,00 = 815,00 €. Ingrédients : 31,33 + 57,00 + 140,83 = 229,17 €. Emballages : 3,00 + 4,50 + 10,00 = 17,50 €. Coûts variables retenus : 246,67 €. Contribution totale : **568,33 €** (815,00 − 246,67), avant personnel, charges, pertes et temps.
+Les calculs gardent les valeurs non arrondies ; les montants affichés sont arrondis au centime et les pourcentages à une décimale.
+Lecture : le burger a le pourcentage le plus élevé mais laisse le plus d'euros par vente. Ce que le calcul ne dit pas : le temps de montage, les pertes réelles, le personnel, les charges. Données manquantes à relever chez vous : portions pesées, ventes réelles, temps par offre.
+
+## 2. Modèle à copier
+```
+PRÉPARATION COMMUNE   date du relevé : ____
+Composant | quantité achetée | prix HT | source du prix (facture) | date
+__________|__________________|_________|__________________________|_____
+Coût du lot : ____ €   Nombre de portions : ____   Poids d'une portion (cru ou cuit ? précisez) : ____   Coût d'une portion : ____ €
+
+OFFRE : ________   Prix de vente HT : ____ €
+Composant | quantité par portion | coût | prix daté
+Préparation commune | ____ portion(s) | ____ |
+Pain / accompagnement | | |
+Sous-total ingrédients : ____ €
+Emballage | | |
+Coûts variables retenus (ingrédients + emballage) : ____ €
+Contribution : ____ €    % matière (ingrédients ÷ prix) : ____ %    Part des coûts variables retenus : ____ %
+Ventes sur la période (dates : ____) : ____   Contribution totale : ____ €
+Temps de travail par portion (si connu) : ____
+Inconnues : ____
+```
+Pour calculer dans un classeur au lieu de la main, ouvrez un modèle existant :
+- Fiche technique + mercuriale : https://ngneaotxxvwfbwwdqiqz.supabase.co/storage/v1/object/public/ressources/template-fiche-technique.xlsx
+- Menu engineering : https://onrush.fr/downloads/menu-engineering-onrush.xlsx
+- Page du guide « coût matière » : https://www.guide-foodtruck.com/ressources/menu/
+Ces classeurs contiennent des formules ; contrôlez-les avec vos chiffres avant de décider.
+
+## 3. Action finale
+Choisissez **une** offre. Pesez cinq portions réellement servies, relevez le prix de chaque composant sur votre dernière facture et remplissez la fiche. Notez la date.
+
+## 4. Trois arbitrages à examiner
+1. Faut-il garder une offre qui laisse peu d'euros par vente mais attire les familles ?
+2. Un pain ou un accompagnement plus cher se justifie-t-il par la qualité que vous voulez servir ?
+3. Quel essai lancer pendant deux services : une description différente, un prix ou une taille de portion ? Un seul à la fois.
+
+Si vous voulez en discuter avec un restaurateur, Cyril Quesnel peut examiner ces arbitrages avec vous. Le kit se suffit à lui-même.

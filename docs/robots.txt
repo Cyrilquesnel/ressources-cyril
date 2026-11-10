@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cyrilquesnel.github.io/ressources-cyril/sitemap.xml

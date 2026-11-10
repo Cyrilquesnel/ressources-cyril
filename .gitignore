@@ -1,0 +1,12 @@
+.env
+.env.*
+*.pem
+*.key
+id_rsa*
+.claude/settings.local.json
+CLAUDE.md
+AGENTS.md
+tasks/
+scripts/
+publication-privee/
+.DS_Store

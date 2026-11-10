@@ -1,0 +1,158 @@
+CYRIL QUESNEL — Préparer les demandes et devis food
+
+MODE D’EMPLOI
+Copiez ce document entier dans une conversation ChatGPT, puis ajoutez vos informations. Les instructions, la méthode, le modèle et les sources sont tous inclus ci-dessous ; les chemins cités servent uniquement à repérer ces sections. Aucun autre fichier ni abonnement à un service de Cyril n’est nécessaire. Cet assistant prépare des comparaisons et des brouillons ; vous validez les prix, les conditions et les décisions avant tout envoi. Les réponses destinées à l’utilisateur sont rédigées en français et en vouvoiement.
+
+
+====================================================================
+SKILL.md
+====================================================================
+
+---
+name: cyril-devis-food
+description: "Prépare fiche de demande, réponse aux infos manquantes, relance et suivi pour devis traiteur ou food truck ; calcul déterministe, validation humaine avant envoi."
+---
+
+# Demandes client et devis food
+
+## Objectif
+Passer d'une demande de client à un devis exact, sans aller-retour inutile, avec une décision humaine avant tout envoi. Aucun workflow n'est activé par ce skill : il prépare des textes, une grille et un protocole d'essai.
+
+## Ce qu'il faut avoir
+Les offres déjà définies (menus, niveaux, options, prix). Si elles manquent, aide à préciser la prestation et prépare les questions utiles. Ne rends pas le kit dépendant d’un autre skill installé ; le kit offres est un complément facultatif. Demande aussi les conditions validées (acompte, délai de validité, annulation, zone de déplacement). Ne les invente jamais ; une condition absente reste « à confirmer ».
+
+## Workflow
+1. **Fiche de demande** (`assets/kit.md`) : occasion, date, lieu, nombre de convives, contraintes alimentaires, budget indicatif, contact. Commence par ces points ; ajoute les questions propres à l'occasion (menu enfants pour un anniversaire, horaires pour une entreprise).
+2. **Tri de la demande reçue** : classe chaque champ en *complet*, *manquant* ou *à confirmer*. Un sous-total des seules lignes connues peut être calculé et nommé comme tel. Ne le présente pas comme un total final ni un devis ferme tant que les entrées, la disponibilité, la logistique et les conditions restent à confirmer.
+3. **Accusé de réception et réponse aux infos manquantes** : deux modèles (demande complète, demande incomplète) ; ne promets pas d'envoi de devis avant d'avoir vérifié disponibilité et coûts. Message court, une seule liste de questions, ton humain, sans jargon.
+4. **Calcul déterministe** : quantité × prix validé, ligne par ligne, avec options ; précise HT ou TTC. Écris les entrées utilisées ; si une entrée manque, écris « manquant » et n'extrapole pas. L'IA présente le calcul ; les prix viennent de ta liste.
+5. **Brouillon de devis et de message** : montre convives, menu, options, montants et conditions tirés des données validées.
+6. **Validation humaine** : le professionnel relit, corrige, puis envoie lui-même. Prévois aussi le cas du refus : on ne chiffre pas, on propose une alternative ou on demande une précision.
+7. **Relance convenue** : à la date que le professionnel a fixée, après avoir vérifié le statut (réponse déjà reçue ? devis lu ?). Nombre et rythme de relances décidés par lui, sans imposer de règle unique. Respecte les règles de contact (ne transforme pas une demande de devis en accord pour des promotions).
+8. **Suivi** : tableau de statuts (reçue, infos demandées, devis préparé, envoyé, accepté, refusé, relancé).
+
+## Circuit vécu de Cyril (déclaré, non mesuré)
+Formulaire → n8n → devis Pennylane → brouillon Gmail → validation de Cyril → envoi. Il dit y avoir passé environ trois mois. Aucun temps gagné ni taux de transformation n'est établi. Un client peut utiliser une autre chaîne (tableur, mail) : le skill ne dépend d'aucun outil.
+
+## Essais avant d'activer quoi que ce soit
+Teste trois cas : demande complète, demande sans lieu ou sans convives, et refus du brouillon. Vérifie ce que reçoit le professionnel.
+
+## Contrôles
+- Aucun prix, délai ou disponibilité inventé.
+- Allergènes et quantités validés par le professionnel.
+- Aucun envoi automatique sans accord explicite.
+
+## Consultation humaine (seulement si utile)
+Si les conditions (acompte, annulation, déplacement) ou la logique de prix restent à trancher, un échange avec Cyril est possible. Le skill reste utilisable sans.
+
+## Fichiers liés
+`references/methode.md` · `references/sources.md` · `assets/kit.md` (sortie publique en vouvoiement)
+
+====================================================================
+references/methode.md
+====================================================================
+
+# Méthode : du formulaire au devis relu
+
+## Les deux références
+**Documentation n8n, Form Trigger.** Un formulaire peut démarrer un parcours automatique avec ses données. Le site distingue l'URL d'essai de l'URL de production : en essai, on voit les données dans l'éditeur ; en production, elles sont dans l'historique des exécutions. Chaque champ peut être rendu obligatoire. On peut aussi choisir de répondre tout de suite ou après la fin du parcours.
+
+**Documentation n8n, validation humaine.** Avant une action sensible (envoyer un message, modifier une donnée), le parcours peut s'arrêter, montrer l'action, puis suivre la décision humaine. En cas de refus, l'action est annulée et le système doit savoir quoi faire ensuite.
+
+Ce sont des documents d'éditeur : ils expliquent comment l'outil fonctionne, ils ne prouvent pas qu'une chaîne marche chez vous.
+
+## Ce que Cyril raconte
+Il avait des formulaires distincts pour anniversaires, entreprises et mariages, et son catalogue était en ligne. Il demandait notamment convives et menus enfants. La chaîne décrite : formulaire, n8n, devis Pennylane, brouillon Gmail, validation, envoi, avec des relances prévues et un bouton de rendez-vous. Il situe cet effort sur environ trois mois et dit que l'API Pennylane était alors récente.
+
+Son constat : les clients veulent comprendre vite et recevoir une proposition claire. C'est son impression, pas une enquête.
+
+## Choix et compromis
+- **Offres d'abord, outil ensuite.** Un devis automatisé sur une offre floue produit des devis flous plus vite.
+- **Peu de champs au départ.** Demandez l'essentiel pour décider si l'on peut répondre, puis complétez avec une réponse ciblée. Plus c'est long, plus on risque l'abandon : c'est une règle d'ergonomie, pas un chiffre.
+- **Calcul déterministe.** Même entrée, même résultat : quantité × prix. L'IA ne devine pas un prix.
+- **Humain avant l'envoi.** Un devis engage commercialement. La validation évite l'erreur de prix ou de disponibilité, sans la garantir.
+- **Un outil adapté.** Pour Cyril, n8n ou Make sont des moyens : choisissez celui où vous êtes à l'aise et limitez le temps de formation.
+
+## En situation
+Demande reçue sans lieu : on ne présente pas de total final ; les lignes connues peuvent être présentées comme sous-total partiel et l'on envoie la réponse type. Demande avec convives mais sans menu enfants alors que c'est un anniversaire : on pose cette question. Refus du brouillon : on corrige ou on annule, sans envoi.
+
+## Ce qu'on évite
+- Activer un parcours avant d'avoir testé des cas incomplets.
+- Annoncer des relances multiples ou agressives.
+- Présenter des gains de temps non mesurés.
+- Utiliser un contact de devis pour une campagne promotionnelle sans vérifier les règles.
+
+====================================================================
+references/sources.md
+====================================================================
+
+# Sources : devis et demandes (consultées le 10 novembre 2026)
+
+## 1. n8n : n8n Form (Form Trigger)
+- URL : https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.formtrigger
+- Éditeur : n8n. Date non affichée.
+- Lu : page de documentation HTML (URL d'essai/production, champ obligatoire, moment de la réponse).
+- Retenu : un formulaire déclenche un parcours ; essayer avant de publier ; champs obligatoires choisis.
+- Limite : documentation actuelle, aucun essai sur une instance ; ne prouve rien sur Pennylane/Gmail ni sur la version utilisée par Cyril.
+
+## 2. n8n : Human-in-the-loop for tools
+- URL : https://docs.n8n.io/build/integrate-ai/ai-examples/human-in-the-loop-for-tools.md
+- Éditeur : n8n. Date non affichée.
+- Lu : page de documentation (approbation/refus, outils concernés, gestion du refus). Documentation uniquement.
+- Retenu : mettre en pause avant une action sensible, montrer ses paramètres, prévoir le refus.
+- Limite : fonction actuelle, pas forcément celle de l'époque de Cyril ; une approbation ne garantit pas l'exactitude des prix.
+
+====================================================================
+assets/kit.md
+====================================================================
+
+# Kit : de la demande au devis
+
+Exemple **fictif**, sans lien avec une activité réelle de Cyril. Prix indicatifs en € HT (hors taxes) ; indiquez toujours si votre prix est HT ou TTC.
+
+## 1. Démonstration
+Demande de « Julie », anniversaire.
+
+| Champ | Reçu | Statut |
+|---|---|---|
+| Occasion | Anniversaire 40 ans | complet |
+| Date | 14 juin | complet |
+| Lieu | « chez moi » | à confirmer (adresse) |
+| Convives | 30 adultes, quelques enfants | manquant (nombre d'enfants) |
+| Allergies | rien indiqué | à confirmer |
+| Formule | Formule 2 | complet |
+
+Calcul : 30 adultes × 28 € HT = 840 € HT ; menu enfants × ? = manquant. **Total non calculé** tant que le nombre d'enfants manque.
+
+## 2. Fiche de demande à copier
+Occasion : mariage / anniversaire / entreprise / autre · Date et horaires · Lieu (adresse, accès) · Convives (adultes / enfants) · Formule souhaitée · Contraintes alimentaires · Contact.
+Champs nécessaires : occasion, date, lieu, convives, contact. Questions conditionnelles : menu enfants pour un anniversaire, horaires de livraison pour une entreprise, accès et électricité si installation sur place.
+
+## 3. Modèle A : accusé de réception (demande complète)
+« Bonjour [prénom], merci pour votre demande du [date]. Elle est complète. Nous vérifions notre disponibilité et nos coûts, puis nous revenons vers vous avant le [date convenue] avec une proposition. »
+
+## 4. Modèle B : informations manquantes
+« Bonjour [prénom], merci pour votre demande. Pour établir votre devis, il nous manque : [liste]. Pouvez-vous nous les confirmer ? »
+
+## 5. Relance
+À la date convenue avec le professionnel, après vérification du statut (déjà répondu ? devis lu ?) : « Bonjour [prénom], je reviens vers vous au sujet de votre devis du [date]. Souhaitez-vous des précisions ? » Nombre et rythme des relances : à décider, voir question 2.
+
+## 6. Suivi
+Reçue → infos demandées → disponibilité vérifiée → devis préparé → relu → envoyé → accepté / refusé / relancé, avec la date de chaque étape.
+
+## 7. Calcul
+Ligne = quantité × prix validé ; options séparées ; total = somme. Si une entrée manque, écrire « manquant ».
+
+## 8. Contrôle avant envoi
+Date, lieu, convives confirmés · prix issus de la liste validée, avec HT/TTC · allergènes vérifiés · conditions écrites seulement si décidées · envoi fait par le professionnel.
+
+## 9. Action finale
+Testez trois demandes : complète, sans lieu, brouillon refusé. Notez ce que vous recevez et ce qui reste flou.
+
+## 10. Trois questions à arbitrer
+1. Quel acompte et quel délai de validité ? (à confirmer avant de les écrire)
+2. Quand relancer, combien de fois, ou pas du tout ?
+3. Quelle demande refuser ou rediriger (date prise, zone trop éloignée) ?
+
+## 11. Résultat opérationnel
+Une fiche, deux modèles de réponse, une relance et un tableau de suivi utilisables dès aujourd'hui. Les prix viennent de vos offres ; tout envoi reste validé par vous.
