@@ -1,6 +1,6 @@
 # Construire et comparer ses offres food — dossier complet pour votre IA
 
-Version du 10 novembre 2026. Ce dossier contient le skill, ses règles de décision, ses références, ses cas fictifs, ses modèles de résultat et ses calculateurs. Joignez-le à une conversation et demandez explicitement d'appliquer cette compétence à votre situation.
+Version du 11 novembre 2026. Ce dossier contient le skill, ses règles de décision, ses références, ses cas fictifs, ses modèles de résultat et ses calculateurs. Joignez-le à une conversation et demandez explicitement d'appliquer cette compétence à votre situation.
 
 POUR L'ASSISTANT : lisez d'abord la rubrique SKILL.md. Les chemins cités renvoient aux rubriques de ce même dossier ; retrouvez leurs titres. Appliquez les références utiles sans réciter les cas fictifs comme des faits du client. Utilisez les données reçues et demandez seulement celles qui peuvent changer le choix.
 
@@ -82,7 +82,7 @@ Le JSON décrit des scénarios (prix HT, convives, lignes quantité × coût, mi
 
 - `references/arbitrages.md` : les 8 arbitrages en détail, critères, pièges, ce qu'on écarte et pourquoi. **Charger pour toute décision d'offre.**
 - `references/cas-pratiques.md` : 3 cas fictifs (entreprise à horaire serré, mariage expérience/vaisselle/service, anniversaire adultes/enfants faible volume) avec entrées, réponse attendue, raisons. **Charger pour calibrer une réponse.**
-- `references/experience-cyril.md` : vécu déclaré de Cyril, usages permis et interdits.
+- `references/experience-cyril.md` : vécu déclaré de Cyril, usages permis et interdits. Charger pour une décision d'accepter, modifier ou refuser une prestation. Les motifs qu'il a déclarés sont un repère ; sa part estimée de demandes acceptées n'est jamais un quota ni un taux de conversion. La méthode d'examen de faisabilité et des coûts reste une proposition du skill, sans inventer son seuil personnel de rentabilité.
 - `references/sources.md` : Hormozi/Acquisition.com, Strategyzer, portée de lecture réelle, limites.
 
 ## Avant de rendre
@@ -632,6 +632,7 @@ Source : synthèse des vocaux du 10 novembre 2026 (`strategie-3-mois/references/
 - **Mariages et événements volumineux.** Il évoque des devis, visites et menus dégustation pour des événements privés, un mariage d'environ 300 personnes, des événements de 400-600 personnes par service. Établissement, date, équipe et mesure sont à préciser : ne pas les utiliser comme cas chiffré.
 - **Minimums et quantités.** Il insiste sur les minimums de commande et les colis des fournisseurs ; cela s'étend par analogie, pas par déclaration, au minimum de prestation (voir ci-dessous).
 - **Prix.** Son jugement sur un pain à 0,50 € incompatible avec la qualité qu'il veut : opinion personnelle, non un minimum.
+- **Accepter ou refuser une demande — complément du 11 novembre 2026.** Au Lunch Wagon, Cyril estime qu'il acceptait environ **90 % des demandes**. Il cite comme motifs de refus une prestation irréalisable, un prix jugé trop bas ou une prestation non rentable. Aucune période de mesure, aucun seuil chiffré ni dossier concret n'ont été précisés. C'est une estimation personnelle d'acceptation des demandes, **pas un taux de conversion en ventes, une preuve de rentabilité ou un objectif à reproduire**. Un prix bas ne démontre pas à lui seul qu'une prestation est déficitaire.
 
 - **Circuit de devis déclaré.** Formulaire → n8n → devis Pennylane → brouillon Gmail → validation de Cyril avant envoi ; relances prévues et bouton de rendez-vous pour parler du devis.
 
@@ -645,7 +646,7 @@ Source : synthèse des vocaux du 10 novembre 2026 (`strategie-3-mois/references/
 - Catalogue en ligne, formulaires, packs, devis types et leurs prix réels.
 - Un mariage ou un événement réel : durée, équipe, nombre de convives réellement servis, ce qui a été inclus/refusé, ce qui s'est mal passé.
 - Minimums qu'il appliquait (prix, convives), conditions et acomptes.
-- Pourquoi il a écarté certaines offres, concrètement (la leçon la plus précieuse).
+- Un cas chiffré d'offre écartée pour impossibilité, prix trop bas ou absence de rentabilité, pour préciser les motifs déclarés le 11 novembre.
 - Réponse à : qui lavait la vaisselle, qui coordonnait, quelles responsabilités écrites dans ses devis ?
 - Le domaine transcrit « lunchvagon.fr » est à vérifier avant tout lien.
 

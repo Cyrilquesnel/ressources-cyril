@@ -1,6 +1,6 @@
 # Examiner la carte et choisir un essai — dossier complet pour votre IA
 
-Version du 10 novembre 2026. Ce dossier contient le skill, ses règles de décision, ses références, ses cas fictifs, ses modèles de résultat et ses calculateurs. Joignez-le à une conversation et demandez explicitement d'appliquer cette compétence à votre situation.
+Version du 11 novembre 2026. Ce dossier contient le skill, ses règles de décision, ses références, ses cas fictifs, ses modèles de résultat et ses calculateurs. Joignez-le à une conversation et demandez explicitement d'appliquer cette compétence à votre situation.
 
 POUR L'ASSISTANT : lisez d'abord la rubrique SKILL.md. Les chemins cités renvoient aux rubriques de ce même dossier ; retrouvez leurs titres. Appliquez les références utiles sans réciter les cas fictifs comme des faits du client. Utilisez les données reçues et demandez seulement celles qui peuvent changer le choix.
 
