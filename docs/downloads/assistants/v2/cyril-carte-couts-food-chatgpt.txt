@@ -374,7 +374,7 @@ CARTE — <nom du pro / de l'offre> — <date>   (données : celles que tu m'as 
    - <inconnue> → si <valeur>, le choix B devient meilleur.
 
 5. ESSAI MESURABLE
-   Quoi changer, sur quelle durée/combien de services, ce qu'on relève (ventes, attente, restes, cash), 
+   Quoi changer, sur quelle durée/combien de services, ce qu'on relève (ventes, attente, restes, cash),
    et le seuil qui fait dire « on garde » ou « on arrête » — fixé AVANT l'essai.
 
 À TOI DE VALIDER : prix, portions et allergènes, capacité, engagements fournisseurs.
