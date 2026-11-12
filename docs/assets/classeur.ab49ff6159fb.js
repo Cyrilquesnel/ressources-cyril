@@ -1,5 +1,5 @@
 (function () {
-  var KEY = 'classeur-hygiene-v1';
+  var KEY = 'classeur-hygiene-v2';
   var NUDGE_FROM = 5;
   var boxes = Array.prototype.slice.call(document.querySelectorAll('input[data-pt]'));
   if (!boxes.length) return;
@@ -27,7 +27,7 @@
     var n = 0;
     boxes.forEach(function (b) { if (b.checked) n++; });
     count.textContent = String(n);
-    nudge.hidden = n < NUDGE_FROM;
+    showNudge(n);
     Array.prototype.forEach.call(document.querySelectorAll('ol.points'), function (ol) {
       var g = ol.getAttribute('data-group');
       var all = ol.querySelectorAll('input[data-pt]');
@@ -60,6 +60,21 @@
     }
     boxes.forEach(function (b) { b.checked = false; });
     save(); refresh(); disarm();
+  });
+
+  var box = document.getElementById('aller-plus-loin');
+  var boxSeen = false;
+  function showNudge(n) { nudge.hidden = n < NUDGE_FROM || boxSeen; }
+  if (box && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      boxSeen = entries[0].isIntersecting;
+      refresh();
+    }).observe(box);
+  }
+  nudge.addEventListener('click', function (ev) {
+    if (!box || !box.scrollIntoView) return;
+    ev.preventDefault();
+    box.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 
   bar.hidden = false;
